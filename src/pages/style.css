@@ -1,0 +1,48 @@
+.container{
+    padding-left: 6.25%;
+    border: 1px solid blue;
+}
+.menu{
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    align-items: center;
+    gap: 32px;
+    border-bottom: 1px solid;
+    margin-bottom: 7.4%;
+}
+span{
+    font-size: 17px;
+}
+.selectedMenu{
+    font-weight: bold;
+}
+button{
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.content{
+    display: grid;
+    grid-template-rows: 150px 150px 150px;
+}
+
+.noti, .title, .subTitle{
+    display: grid;
+    grid-template-columns: 15% auto;
+}
+.notiContent{
+    gap: 60px;
+    display: flex;
+    align-items: center;
+}
+.noti button{
+    width: 174px;
+    height: 64px;
+    border: 1px solid;
+}
+.selectedNoti{
+    background-color: #6C69FF;
+    color: white;
+    border: 1px solid black;
+}
