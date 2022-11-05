@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import { setConstantValue } from "typescript";
 import Notification from "../pageService/Notification";
+import Point from "../pageService/Point";
 import menuIcon from '../assets/menuIcon.png';
+import Inquiry from "../pageService/Inquiry";
 
 const Service = () => {
     const [selectedMenu, setSelectedMenu] = useState(0);
+    
     return (
         <>
             <div>
@@ -41,9 +44,11 @@ const Service = () => {
                         </span>
                     </button>
                 </div>
-                <div className="content">
-                    {selectedMenu==0 ? <Notification /> : null}
-                </div>
+                {/* <div className="content"> */}
+                    {selectedMenu==0 ? <Notification /> : 
+                    selectedMenu==1 ?<Point /> :
+                    selectedMenu==3? <Inquiry/> : null}
+                {/* </div> */}
             </div>
         </>
     )
