@@ -84,8 +84,12 @@ button{
 .modalContent{
     width: 80%;
     height: 80%;
+}
+.modalContentWrap{
+    padding: 4% 4%;
+    height: 92%;
     background: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    grid-template-rows: 1fr 1fr 3fr 3fr 1fr;
+    display: grid;
+    text-align: start;
 }

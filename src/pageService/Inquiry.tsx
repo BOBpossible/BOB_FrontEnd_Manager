@@ -82,11 +82,12 @@ const Inquiry = () => {
                     </div>
                 )})}
             </div>
-            {modalOpen && <InquiryModal modalOpen={modalOpen} setModalOpen={setModalOpen} serialNum={selectedInquiry} />}
             <div className="inquriyPageNum">
                 1 - ---
             </div>
         </div>
+        {modalOpen && <InquiryModal modalOpen={modalOpen} setModalOpen={setModalOpen} serialNum={selectedInquiry} />}
+
         </>
     )
 }
