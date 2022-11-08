@@ -3,10 +3,10 @@
     border: 1px solid blue;
 }
 .menu{
+    width: 83vw;
     display: grid;
-    grid-template-columns: repeat(6,1fr);
+    grid-template-columns: repeat(5,1fr);
     align-items: center;
-    gap: 32px;
     border-bottom: 1px solid;
     margin-bottom: 7.4%;
 }
@@ -92,4 +92,12 @@ button{
     grid-template-rows: 1fr 1fr 3fr 3fr 1fr;
     display: grid;
     text-align: start;
+}
+.modalContentWrap button{
+ background-color: #d9d9d9;
+ border: 1px solid;   
+}
+.modalContentWrap .inputDone{
+    background-color: #6C69FF;
+    color: white;
 }

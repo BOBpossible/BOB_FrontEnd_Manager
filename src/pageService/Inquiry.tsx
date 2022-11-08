@@ -27,7 +27,6 @@ const Inquiry = () => {
             serialNumber: 1,
         },
     ]
-    console.log('modalOpen', modalOpen);
     return(
         <>
         {/* <div className="contentInquiry" onClick={(e)=> {

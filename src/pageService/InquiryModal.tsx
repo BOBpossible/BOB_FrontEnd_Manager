@@ -11,7 +11,15 @@ const InquiryModal = ({modalOpen, setModalOpen, serialNum}: Modal) => {
     const close = () => {
         setModalOpen(false);
     }
-
+    const [inputDisabled, setInputDisabled] = useState(true);
+    const [newAnswer, setNewAnswer] = useState('');
+    const inputChange = (e:any) => {
+        setNewAnswer(e.target.value);
+    }
+    const saveNewAnser = () => {
+        console.log('전송');
+        //새로 입력한 답변 서버로 전송
+    }
     const dummy=[
         {
             num:1,
@@ -19,7 +27,7 @@ const InquiryModal = ({modalOpen, setModalOpen, serialNum}: Modal) => {
             title: '문의제목1',
             content: '내용이에용내용요용',
             time: '2022-08-21 12:34:56.0',
-            answer: '',
+            answer: '', //api에서 받아오는 답변해둔값
             serialNumber: 0,
         },
     ]
@@ -41,11 +49,25 @@ const InquiryModal = ({modalOpen, setModalOpen, serialNum}: Modal) => {
                     </div>
                     <div className="gridLR">
                         <div>답변 내용</div>
-                        {dummy[0].answer==='' ?
-                        <input type="text" />
-                        : <div>{dummy[0].answer}</div>}
+                        <input type="text" onChange={inputChange} disabled={inputDisabled} value={newAnswer} />
                     </div>
-                    <button onClick={close}>닫기</button>
+                    <div style={{'textAlign': 'center'}}>
+                        <button onClick={close}>닫기</button>
+                        {dummy[0].answer === '' ? 
+                            <button className='inputDone' onClick={() => {
+                                if (!inputDisabled){
+                                    saveNewAnser();
+                                }
+                                setInputDisabled(!inputDisabled);
+                            }}>{inputDisabled ? '작성' : '작성 완료'}</button>
+                            : <button className='inputDone' onClick={() => {
+                                if (!inputDisabled){
+                                    saveNewAnser();
+                                }
+                                setInputDisabled(!inputDisabled);
+                            }}>{inputDisabled ? '수정' : '수정 완료'}</button>
+                        }
+                    </div>
                 </div>
             </div>
         </div>
